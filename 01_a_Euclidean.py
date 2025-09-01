@@ -1,3 +1,4 @@
+#Euclidean Algorithm
 def gcd(a,b):
     n1 = a
     n2 = b
@@ -11,5 +12,6 @@ def gcd(a,b):
 x = int(input("Enter the first number: "))
 y = int(input("Enter the second number: "))
 print("gcd of", x, "and", y, "is", gcd(x,y))
+
 
 
