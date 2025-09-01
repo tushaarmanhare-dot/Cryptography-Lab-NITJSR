@@ -76,20 +76,45 @@ def playfair_encrypt(text,matrix):
 
     return result
 
+def playfair_decrypt(text,matrix):
+    text = text.upper().replace("J","I")
+    clean_text = ""
+    for c in text:
+        if c.isalpha():
+            clean_text += c
+    text = clean_text
+    
+    result = ""
+    for i in range(0,len(text),2):
+        a, b = text[i], text[i+1]
+        r1, c1 = find_pos(matrix,a)
+        r2, c2 = find_pos(matrix,b)
+
+        if r1 == r2:
+            result += matrix[r1][(c1 - 1) % 5]
+            result += matrix[r2][(c2 - 1) % 5]
+
+        elif c1 == c2:
+            result += matrix[(r1 - 1) % 5][c1]
+            result += matrix[(r2 - 1) % 5][c2]
+
+        else:
+            result += matrix[r1][c2]
+            result += matrix[r2][c1]
+
+    return result
+
+
 key = input("Enter the keyword: ")
 matrix = gen_key_matrix(key)
 print_matrix(matrix)
 
 msg = input("Enter the message to encrypt: ")
 enc = playfair_encrypt(msg,matrix)
+dec = playfair_decrypt(enc,matrix)
 
 print("Original message: ",msg.upper())
 print("Encrypted message: ",enc)
+print("Decrypted message: ",dec)
 
             
-
-
-
-
-
-    
