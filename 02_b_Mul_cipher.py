@@ -1,3 +1,4 @@
+#Implement Multiplicative Cipher 
 from math import gcd
 
 def mod_inverse(a, m=26):
@@ -49,4 +50,5 @@ else:
     print("Original message:", msg)
     print("Encrypted message:", enc)
     print("Decrypted message:", dec)
+
 
