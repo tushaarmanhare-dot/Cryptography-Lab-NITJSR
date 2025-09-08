@@ -26,7 +26,7 @@ def affine_decrypt(text, a, b, m=26):
     return result
 
 #Extra predefined ciphertext brute-force
-ctext = "WVZCPSCFZQCUUIMC"
+ctext = "HUPHUEPPIVEYUF"
 print(f"\nPredefined Ciphertext: {ctext}\n")
 print("Trying all possible (a, b) keys:\n")
 
@@ -41,4 +41,5 @@ for a in valid_a:
         pt = affine_decrypt(ctext, a, b)
         if pt:  # skip invalid a
             print(f"a={a:2}, b={b:2} -> {pt}")
+
 
