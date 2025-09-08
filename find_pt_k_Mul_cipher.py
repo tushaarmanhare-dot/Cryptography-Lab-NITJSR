@@ -7,21 +7,7 @@ def mod_inverse(a, m=26):
             print("Inv key: ",x)
             return x
     return None
-
-def encrypt(text,shift):
-    result = ""
-    for char in text:
-        if char.isalpha():
-            if char.isupper():
-                base = ord('A')
-            else:
-                base = ord('a')
-
-            result += chr(((ord(char) - base) * shift) % 26 + base)
-        else:
-            result += char
-    return result
-
+    
 def decrypt(text,shift):
     inv = mod_inverse(shift)
     if inv is None:
@@ -43,4 +29,5 @@ ctext = "UWEEWGNMGUZBYXY"
 print(f"Ciphertext: {ctext}\n")
 for key in range(26):
     text = decrypt(ctext,key)
+
     print(f"Key {key:2} -> {text}")
