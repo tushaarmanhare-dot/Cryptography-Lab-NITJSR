@@ -20,11 +20,12 @@ def poly_add_list(a, b):
 
     return res
 
-A = list(map(int, input("Enter polynomial A as bits (LSB first, space-separated): ")))
-B = list(map(int, input("Enter polynomial B as bits (LSB first, space-separated): ")))
+A = list(map(int, input("Enter polynomial A as bits (LSB first): ")))
+B = list(map(int, input("Enter polynomial B as bits (LSB first): ")))
 
 result = poly_add_list(A, B)
 
 print("\nPolynomial A:", A)
 print("Polynomial B:", B)
+
 print("A(x) + B(x) =", result)
