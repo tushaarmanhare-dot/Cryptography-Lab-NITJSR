@@ -10,18 +10,7 @@ def mod_inverse(a, m):
     if n1 != 1:
         return None
     return t1 % m
-
-def affine_encrypt(text, a, b, m=26):
-    result = ""
-    for char in text:
-        if char.isalpha():
-            base = ord('A') if char.isupper() else ord('a')
-            x = (((a * (ord(char) - base)) + b) % m)
-            result += chr(x + base)
-        else:
-            result += char
-    return result
-
+    
 def affine_decrypt(text, a, b, m=26):
     inv = mod_inverse(a, m)
     if inv is None:
@@ -36,7 +25,7 @@ def affine_decrypt(text, a, b, m=26):
             result += char
     return result
 
-# --- Extra predefined ciphertext brute-force ---
+#Extra predefined ciphertext brute-force
 ctext = "WVZCPSCFZQCUUIMC"
 print(f"\nPredefined Ciphertext: {ctext}\n")
 print("Trying all possible (a, b) keys:\n")
@@ -52,3 +41,4 @@ for a in valid_a:
         pt = affine_decrypt(ctext, a, b)
         if pt:  # skip invalid a
             print(f"a={a:2}, b={b:2} -> {pt}")
+
