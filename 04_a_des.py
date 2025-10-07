@@ -94,3 +94,4 @@ if __name__ == "__main__":
     print("Plaintext:", plaintext)
     print("Ciphertext bits (first 32 shown):",
           "".join(str(x) for x in ciphertext_bits[:32]), "...")
+
