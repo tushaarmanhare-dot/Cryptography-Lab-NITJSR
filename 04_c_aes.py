@@ -1,35 +1,3 @@
-# from Crypto.Cipher import AES
-# from Crypto.Random import get_random_bytes
-# from Crypto.Util.Padding import pad, unpad
-
-# # Generate a random 32-byte key (AES-256)
-# key = get_random_bytes(32)
-
-# # Generate a random 16-byte IV (AES block size = 16)
-# iv = get_random_bytes(16)
-
-# # Create AES cipher object for encryption
-# cipher_encrypt = AES.new(key, AES.MODE_CBC, iv)
-
-# # Message to encrypt
-# plaintext = b"This is a test message for AES!"
-
-# # Pad plaintext to match block size (16 bytes)
-# padded_text = pad(plaintext, AES.block_size)
-
-# # Encrypt
-# ciphertext = cipher_encrypt.encrypt(padded_text)
-# print("Ciphertext:", ciphertext)
-
-# # Create AES cipher object for decryption (must use same key and IV)
-# cipher_decrypt = AES.new(key, AES.MODE_CBC, iv)
-
-# # Decrypt and unpad
-# decrypted_padded = cipher_decrypt.decrypt(ciphertext)
-# decrypted_text = unpad(decrypted_padded, AES.block_size)
-
-# print("Decrypted:", decrypted_text.decode())
-
 # Advance Encryption Standard (AES)
 from Cryptodome.Cipher import AES
 from Cryptodome.Random import get_random_bytes
@@ -85,4 +53,5 @@ if __name__ == "__main__":
     print("Encryption:")
     print("Ciphertext:", encrypted_data, "\n")
     print("Decryption:")
+
     print("Plaintext:", decrypted_data)
